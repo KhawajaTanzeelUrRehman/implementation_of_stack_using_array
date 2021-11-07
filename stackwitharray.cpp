@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 class stack {
@@ -25,9 +26,6 @@ public:
 
     bool isFull() {
         //function which check the stack is full or not.
-        if (top == size - 1) {
-            cout << "Full";
-        }
         return top == size - 1;
     }
 
@@ -39,7 +37,7 @@ public:
     void push(char value) {
         //funciton to push element in the stack
         if (isFull()) {
-            cout << "This Stack is full";
+            cout << "This Stack is full."<<endl;
         }
         else {
             top++;
@@ -50,8 +48,7 @@ public:
     char pop() {
         //funciton to pop element from the stack.
         if (!isEmpty()) {
-            top--;
-            return arr[top + 1];
+            return arr[top--];
         }
         else {
             return '!';
